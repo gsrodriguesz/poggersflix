@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    transition: 0.3s;
+    scroll-behavior: smooth;
+    color: var(--text-color);
+}
+
+:root {
+    --backgound-scheme: #0F0F0F, #191919;
+    --detail-color: red;
+    --text-color: white;
+}
+
+body {
+    background-image: radial-gradient(60% 50%, var(--backgound-scheme));
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    width: 100%;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem;
+    position: absolute;
+    z-index: 100;
+    width: calc(100% - 4rem);
+}
+
+nav h1 {
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    text-align: center;
+    font-size: 110%;
+    width: 60%;
+}
+
+.links a {
+    width: 20%;
+}
+
+.links a {
+    margin: 0 4rem;
+    display: block;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 2rem;
+    border-radius: 100%;
+    margin-left: 2rem;
+}
+
+.search {
+    font-size: x-large;
+}
+
+.search i {
+    margin: 0 1rem;
+}
+
+.presents img {
+    z-index: -50;
+    width: 100%;
+    opacity: 30%;
+    top: 0;
+    -webkit-mask-image: linear-gradient(to top, transparent 2%, var(--backgound-scheme));
+
+}
+
+.movieTitle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    right: 2%;
+    bottom: 5%;
+    font-size: 100%;
+    text-align: center;
+}
+
+.movieTitle h1 {
+    font-weight: 900;
+    font-size: 7.8rem;
+}
+
+.movieTitle p {
+    width: 60%;
+    height: 3rem;
+    text-overflow: ellipsis;
+
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+section {
+    width: 92%;
+    margin: 5rem auto;
+    margin-top: 3rem;
+}
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+}
+
+.lineDetail {
+    width: .7rem;
+    height: 2.5rem;
+    border-radius: 30px;
+    margin-right: 1rem;
+    background-color: var(--detail-color);
+}
+
+.movieRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto hidden;
+    -webkit-mask-image: linear-gradient(to left, transparent -30%, var(--backgound-scheme));
+}
+
+.movieCover img {
+    width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 35px;
+    margin: 1rem;
+}
+
+.movieCover:hover {
+    transform: scale(1.1);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0F0F0F;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--detail-color);
+    border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c90000;
+}
+
+#flix {
+    padding: 0;
+}
+
+#joinButton {
+    border: 2px solid var(--detail-color);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+
+.slogan {
+    width: 60%;
+    margin: 8rem auto;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#sloganStart {
+    display: block;
+    background-color: var(--detail-color);
+    margin: 2rem auto;
+    width: 50%;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+}
+
+hr {
+    width: 70%;
+    margin: 5rem auto;
+    border: 2px solid var(--detail-color);
+    border-radius: 100%;
+}
+
+
+
+section h2 {
+    font-size: 1.9rem;
+}
+
+.sectionContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.sectionContent img {
+    width: 40%;
+    margin-right: 1rem;
+}
+
+contrast {
+    color: var(--detail-color);
+    border-radius: 10px;
+    padding: 0 0.3rem;
+}
+
+footer {
+    text-align: center;
+    margin: 1rem auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+svg {
+    font-family: 'Rubik', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    width: 100%;
+}
+
+svg text {
+    animation: stroke 3s infinite alternate;
+    stroke-width: 2;
+    stroke: #FF0000;
+    font-size: 100px;
+}
+
+@keyframes stroke {
+    0% {
+        fill: rgba(204, 29, 29, 0);
+        stroke: rgba(255, 0, 0, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        fill: rgba(204, 29, 29, 0);
+        stroke: rgba(255, 0, 0, 1);
+    }
+
+    80% {
+        fill: rgba(204, 29, 29, 0);
+        stroke: rgba(255, 0, 0, 1);
+        stroke-width: 3;
+    }
+
+    100% {
+        fill: rgba(204, 29, 29, 1);
+        stroke: rgba(255, 0, 0, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+#wrapper {
+    z-index: 9999;
+    background-color: #0F0F0F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: fixed;
+    position: fixed;
+}

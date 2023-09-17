@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    transition: 0.3s;
+    scroll-behavior: smooth;
+    color: var(--text-color);
+}
+
+:root {
+    --backgound-scheme: #0F0F0F, #191919;
+    --detail-color: red;
+    --text-color: white;
+}
+
+body {
+    background-color: #000000;
+    /* background-image: radial-gradient(60% 50%, var(--backgound-scheme)); */
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 2rem;
+    position: absolute;
+    z-index: 100;
+    width: calc(100% - 4rem);
+}
+
+nav h1 {
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    text-align: center;
+    font-size: 110%;
+    width: 60%;
+}
+
+.links a {
+    width: 20%;
+}
+
+.links a {
+    margin: 0 4rem;
+    display: block;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 2rem;
+    border-radius: 100%;
+    margin-left: 2rem;
+}
+
+.search {
+    font-size: x-large;
+}
+
+.search i {
+    margin: 0 1rem;
+}
+
+/* .mainContainer {
+    width: 100%;
+    height: 100%;
+} */
+
+#background img {
+    z-index: -50;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    opacity: 30%;
+    filter: saturate(2);
+    -webkit-mask-image: linear-gradient(45deg, transparent 2%, var(--backgound-scheme));
+}
+
+.movieInfoContainer {
+    width: 35%;
+    margin: auto 8rem;
+    top: 25%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movieInfo h1 {
+    font-size: 6rem;
+}
+
+.movieEpisodesContainer {
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    max-height: 60%;
+    min-height: 20%;
+    right: 0%;
+    top: 20%;
+    margin-right: 5rem;
+    padding: 0rem 1rem 06rem 0rem;
+    display: flex;
+    justify-content: left;
+    align-items: top;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+
+.movieEpisode {
+    margin: .8rem 1rem;
+    /* height: 200px; */
+}
+
+.movieEpisodesContent img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 25px;
+    filter: brightness(60%);
+}
+
+.movieEpisode:hover {
+    transform: scale(1.1);
+}
+
+.movieEpisodesContent a p {
+    width: fit-content;
+    margin-left: .5rem;
+}
+
+.detailBar {
+    z-index: 1000;
+    width: 2rem;
+    height: 25rem;
+    margin-right: 3rem;
+    background-color: var(--detail-color);
+}
+
+#movieClass {
+    display: inline-block;
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 25px;
+    border: 2px solid var(--detail-color);
+}
+
+#movieSize {
+    display: inline-block;
+    margin-left: 3rem;
+    color: var(--detail-color);
+    font-weight: 800;
+}
+
+#movieSinopse {
+    margin: 2rem 0;
+    text-indent: 2rem;
+    text-align: justify;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0F0F0F;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--detail-color);
+    border-radius: 40px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c90000;
+}
+
+
+contrast {
+    color: var(--detail-color);
+    border-radius: 10px;
+    padding: 0 0.3rem;
+}
