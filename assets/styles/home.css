@@ -48,12 +48,9 @@ a {
 }
 
 .links a {
-    width: 20%;
-}
-
-.links a {
     margin: 0 4rem;
     display: block;
+    width: 20%;
 }
 
 .user {
@@ -74,7 +71,6 @@ a {
 .search i {
     margin: 0 1rem;
 }
-
 .presents img {
     z-index: -50;
     width: 100%;
@@ -103,12 +99,11 @@ a {
 
 .movieTitle p {
     width: 60%;
-    height: 3rem;
+    height: 1rem;
     text-overflow: ellipsis;
 
     white-space: wrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 section {
