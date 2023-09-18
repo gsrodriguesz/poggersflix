@@ -20,7 +20,6 @@ header {
     width: 100%;
 }
 
-
 nav {
     display: flex;
     align-items: center;
@@ -71,6 +70,12 @@ a {
 .search i {
     margin: 0 1rem;
 }
+
+.presents {
+    display: inline-block;
+    position: relative;
+}
+
 .presents img {
     z-index: -50;
     width: 100%;
@@ -80,16 +85,17 @@ a {
 
 }
 
-.movieTitle {
+.presents .movieTitle {
     position: absolute;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     flex-direction: column;
     width: fit-content;
     right: 2%;
-    bottom: 5%;
+    bottom: 15%;
     font-size: 100%;
-    text-align: center;
 }
 
 .movieTitle h1 {
@@ -99,9 +105,7 @@ a {
 
 .movieTitle p {
     width: 60%;
-    height: 1rem;
     text-overflow: ellipsis;
-
     white-space: wrap;
     overflow: hidden;
 }
@@ -147,6 +151,41 @@ section {
 
 .movieCover:hover {
     transform: scale(1.1);
+}
+
+#keepWatching {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#kwContent {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    width: 40%;
+}
+
+#kwTitle {
+    font-size: 3.5rem;
+}
+
+#kwSinopse {
+    margin-top: 1.2rem;
+    text-indent: 20px;
+}
+
+#kwWatchNow {
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 3px solid var(--detail-color);
+    border-radius: 35px;
+    text-align: center;
+}
+
+#kwCover img {
+    border-radius: 25px;
 }
 
 /* width */
@@ -235,8 +274,111 @@ footer {
     margin: 1rem auto;
 }
 
+/*Responsividade tablets*/
+@media screen and (min-width: 600px) and (max-width: 995px) {
+    .movieTitle {
+        width: 90%;
+        height: fit-content;
+        top: 60%;
+        right: -5%;
+    }
 
+    .movieTitle h1 {
+        font-size: 3.8rem;
+    }
 
+    .sectionTitle h2 {
+        font-size: 1.7rem;
+    }
+
+    .movieCover img {
+        width: 250px;
+        height: 170px;
+    }
+
+    #kwCover img {
+        width: 320px;
+    }
+
+    #kwContent {
+        padding-left: 0;
+    }
+
+    #kwTitle {
+        font-size: 2rem;
+    }
+
+    #kwSinopse {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* number of lines to show */
+        line-clamp: 3;
+        text-align: justify;
+        -webkit-box-orient: vertical;
+    }
+}
+
+/*Responsividade celulares*/
+@media screen and (min-width: 0) and (max-width: 599px) {
+    .presents {
+        margin-bottom: 15%;
+    }
+
+    .movieTitle {
+        width: 90%;
+        height: fit-content;
+        top: 60%;
+        right: -5%;
+    }
+
+    .movieTitle h1 {
+        font-size: 2.8rem;
+    }
+
+    .movieTitle p {
+        font-size: 0.9rem;
+    }
+
+    .sectionTitle h2 {
+        font-size: 1.1rem;
+    }
+
+    .movieCover img {
+        width: 250px;
+        height: 170px;
+    }
+
+    #keepWatching {
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    #kwCover img {
+        width: 320px;
+    }
+
+    #kwContent {
+        padding: 0;
+        margin: 2rem 0;
+        width: 80%;
+    }
+
+    #kwTitle {
+        font-size: 2rem;
+    }
+
+    #kwSinopse {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        /* number of lines to show */
+        line-clamp: 3;
+        text-align: justify;
+        -webkit-box-orient: vertical;
+    }
+}
 
 
 
