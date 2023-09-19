@@ -21,10 +21,11 @@ header {
     width: 100%;
 }
 
-nav {
+header {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 2rem;
     position: absolute;
@@ -32,25 +33,87 @@ nav {
     width: calc(100% - 4rem);
 }
 
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
 nav h1 {
+    width: 27%;
     font-size: 2.5rem;
 }
 
 a {
     text-decoration: none;
+    display: block;
+    width: fit-content;
+}
+
+.searchBar {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 60px;
+    height: 40px;
+    background: none;
+    border: 2px solid var(--detail-color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: var(--text-color);
+    outline: none;
+    transition: .5s;
+}
+
+.searchBar:hover input {
+    width: 150px;
+    background: inherit;
+    border-radius: 10px;
+    display: inline;
+}
+
+.searchBar i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: var(--detail-color);
+    transition: .2s;
+}
+
+.searchBar:hover i {
+    opacity: 0;
+    z-index: -1;
+}
+
+.right {
+    width: 23%;
+    display: flex;
+    justify-content: center;
 }
 
 .links {
     display: flex;
     text-align: center;
+    justify-content: space-around;
+    align-items: center;
     font-size: 110%;
-    width: 60%;
+    width: 50%;
 }
 
 .links a {
-    margin: 0 4rem;
+    margin: 0 10%;
     display: block;
-    width: 20%;
+}
+
+nav input {
+    display: inline;
 }
 
 .user {

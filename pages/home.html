@@ -30,26 +30,32 @@
 
 
     <header>
+
         <nav>
             <h1><a>Poggers<contrast id="flix">Flix</contrast></a></h1>
-            <!-- <div class="links">
+            <div class="links">
                 <a href="#">Filmes</a>
                 <a href="#">Séries</a>
                 <a href="#">Favoritos</a>
-
-            </div> -->
-            <!-- <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-regular fa-bell"></i>
-
             </div>
-            <div class="user">
-                <p>
-                    username
-                </p>
-                _<img src="https://gclabels.net/image/cache/data/new/inv/new/Blank-White-Square-Labels-s1w-600x600.png">
-            </div> -->
-
+            <div class="right">
+                <div class="searchBar">
+                    <form name="search">
+                        <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user">
+                    <img
+                        src="https://gclabels.net/image/cache/data/new/inv/new/Blank-White-Square-Labels-s1w-600x600.png">
+                </div>
+            </div>
+        </nav>
+        <nav id="menu" style="display: none;">
+            <a href="#">Filmes</a>
+            <a href="#">Séries</a>
+            <a href="#">Favoritos</a>
+            <input type="text" id="searchBar">
         </nav>
     </header>
     <main>
