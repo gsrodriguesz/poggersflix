@@ -75,10 +75,16 @@ a {
     margin: 0 1rem;
 }
 
-/* .mainContainer {
+.mainContainer {
+    position: absolute;
     width: 100%;
-    height: 100%;
-} */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 #background img {
     z-index: -50;
@@ -86,41 +92,46 @@ a {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     opacity: 10%;
     filter: saturate(2);
     -webkit-mask-image: linear-gradient(45deg, transparent 2%, var(--backgound-scheme));
 }
 
 .movieInfoContainer {
-    width: 35%;
-    margin: auto 8rem;
-    top: 25%;
-    position: absolute;
+    width: min-content;
+    margin: auto 6rem;
+    width: 50%;
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: clamp(1.1vmax, 1.3vmax, 1.3vmax);
+}
+
+.movieInfo {
+    width: calc(100% - 4rem);
 }
 
 .movieInfo h1 {
-    font-size: 6rem;
+    font-size: clamp(1vmax, 5rem, 6vmax);
 }
 
 .movieEpisodesContainer {
     position: absolute;
-    width: 300px;
-    height: fit-content;
+    width: 25%;
+    height: 60%;
     max-height: 60%;
     min-height: 20%;
     right: 0%;
-    top: 20%;
+    top: 10%;
     margin-right: 5rem;
     padding: 0rem 1rem 06rem 0rem;
     display: flex;
     justify-content: left;
     align-items: top;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 
@@ -130,7 +141,7 @@ a {
 }
 
 .movieEpisodesContent img {
-    width: 100%;
+    width: 300px;
     height: 165px;
     object-fit: cover;
     border-radius: 25px;
@@ -148,9 +159,10 @@ a {
 
 .detailBar {
     z-index: 1000;
-    width: 2rem;
+    width: .5rem;
     height: 25rem;
     margin-right: 3rem;
+    border-radius: 25px;
     background-color: var(--detail-color);
 }
 
@@ -173,6 +185,7 @@ a {
     margin: 2rem 0;
     text-indent: 2rem;
     text-align: justify;
+    width: 100%;
 }
 
 /* width */
@@ -203,6 +216,120 @@ contrast {
     border-radius: 10px;
     padding: 0 0.3rem;
 }
+
+
+
+
+/*Responsividade tablets*/
+@media screen and (min-width: 600px) and (max-width: 1351px) {
+    .mainContainer {
+        position: absolute;
+        width: 100%;
+        top: 70%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .movieInfoContainer {
+        width: 70%;
+        font-size: clamp(1vmax, 2vmax, 3vmax);
+    }
+
+    .movieEpisodesContainer {
+        width: 80%;
+        max-height: 60%;
+        min-height: 20%;
+        margin: 5rem auto;
+        padding: 2rem;
+        display: flex;
+        justify-content: left;
+        align-items: top;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        right: 0%;
+        top: 90%;
+    }
+
+    .movieEpisode {
+        width: fit-content;
+    }
+
+    .movieEpisodesContent {
+        width: fit-content;
+    }
+
+    .movieEpisodesContent img {
+        width: 250px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 25px;
+        filter: brightness(60%);
+    }
+
+}
+
+/*Responsividade celulares*/
+@media screen and (min-width: 0) and (max-width: 599px) {
+    .mainContainer {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .movieInfoContainer {
+        width: 70%;
+        font-size: clamp(1vmax, 1.5vmax, 1.5vmax);
+        margin: 6rem auto;
+    }
+
+    .movieInfoContainer h1 {
+        font-size: clamp(2vmax, 4vmax, 4vmax);
+    }
+
+    #movieSinopse {
+        font-size: clamp(1vmax, 2vmax, 3vmax);
+    }
+
+    .movieEpisodesContainer {
+        width: 90%;
+        margin: .1rem auto;
+        padding-bottom: .5rem;
+        display: flex;
+        justify-content: left;
+        align-items: top;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        right: 0%;
+        top: 100%;
+    }
+
+    .movieEpisode {
+        width: fit-content;
+    }
+
+    .movieEpisodesContent {
+        width: fit-content;
+    }
+
+    .movieEpisodesContent img {
+        width: 250px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 25px;
+        filter: brightness(60%);
+    }
+
+}
+
+
 
 
 
