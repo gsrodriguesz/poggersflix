@@ -14,6 +14,7 @@
     <title>Home</title>
     <!-- <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon"> -->
     <script src="https://kit.fontawesome.com/d7de81155c.js" crossorigin="anonymous"></script>
+    <script src="../assets/scripts/functions.js"></script>
 </head>
 
 <div id="wrapper">
@@ -51,17 +52,24 @@
                 </div>
             </div>
         </nav>
-        <nav id="menu" style="display: none;">
-            <a href="#">Filmes</a>
-            <a href="#">Séries</a>
-            <a href="#">Favoritos</a>
-            <input type="text" id="searchBar">
+        <nav id="menu">
+            <h1><a>Poggers<contrast id="flix">Flix</contrast></a></h1>
+            <button onclick="showNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div id="navContent" style="display: none;">
+                <a href="#">Filmes</a>
+                <a href="#">Séries</a>
+                <a href="#">Favoritos</a>
+                <input type="text" id="searchBar">
+            </div>
         </nav>
     </header>
     <main>
 
         <div class="presents">
-            <img src="https://i.kym-cdn.com/editorials/icons/original/000/006/268/frontrow.jpg">
+            <img
+                src="https://img.ifunny.co/images/237a0234bad68d202d1aa20286f9a95126e1e88acb49562731cfa0928b1719c7_1.jpg">
             <div class="movieTitle">
                 <h1>Oppenheiniken</h1>
                 <p>O físico J. Robert Oppenheimer trabalha com uma equipe de cientistas durante o Projeto Manhattan,

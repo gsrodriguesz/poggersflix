@@ -11,6 +11,7 @@ let movieSchema = new Schema({
     mFullSizeCover: { type: String },
     mCover: { type: String },
     mEpisodes: { type: Array },
+    mLaunchDate: { type: Date }
     // mEpisodes: { epNumber: 0, epName: " ", epURL: " ", epThumbnail: " "}
 })
 

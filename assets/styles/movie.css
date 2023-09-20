@@ -93,7 +93,7 @@ a {
     object-fit: cover;
     overflow: hidden;
     position: fixed;
-    opacity: 10%;
+    opacity: 20%;
     filter: saturate(2);
     -webkit-mask-image: linear-gradient(45deg, transparent 2%, var(--backgound-scheme));
 }
@@ -106,7 +106,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(1.1vmax, 1.3vmax, 1.3vmax);
+    font-size: clamp(1vmax, 1.2vmax, 1.2vmax);
 }
 
 .movieInfo {
@@ -114,7 +114,7 @@ a {
 }
 
 .movieInfo h1 {
-    font-size: clamp(1vmax, 5rem, 6vmax);
+    font-size: clamp(1vmax, 5rem, 5vmax);
 }
 
 .movieEpisodesContainer {
@@ -172,6 +172,7 @@ a {
     padding: .5rem 1rem;
     border-radius: 25px;
     border: 2px solid var(--detail-color);
+    margin: 2rem 0;
 }
 
 #movieSize {
@@ -179,10 +180,11 @@ a {
     margin-left: 3rem;
     color: var(--detail-color);
     font-weight: 800;
+    margin: 2rem 1rem;
 }
 
 #movieSinopse {
-    margin: 2rem 0;
+    margin: 0 2rem 0 0;
     text-indent: 2rem;
     text-align: justify;
     width: 100%;
@@ -219,9 +221,57 @@ contrast {
 
 
 
+nav#menu {
+    display: none;
+    justify-content: space-between;
+    transition: opacity 1s ease-out;
+}
+
+#navContent {
+    z-index: -1;
+    position: fixed;
+    padding-top: 10rem;
+    right: 0;
+    top: 0%;
+    width: 55%;
+    height: 100vh;
+    background: radial-gradient(60% 50%, var(--backgound-scheme));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#navContent a {
+    margin: 1.7rem;
+    border-bottom: 1.5px solid var(--detail-color);
+}
+
+#menu button {
+    background: none;
+    border: none;
+    font-size: x-large;
+}
+
+
+
+
+
 
 /*Responsividade tablets*/
 @media screen and (min-width: 600px) and (max-width: 1351px) {
+    nav h1 {
+        width: 55%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
     .mainContainer {
         position: absolute;
         width: 100%;
@@ -234,8 +284,12 @@ contrast {
     }
 
     .movieInfoContainer {
-        width: 70%;
+        width: 90%;
         font-size: clamp(1vmax, 2vmax, 3vmax);
+    }
+
+    .movieInfoContainer h1 {
+        font-size: clamp(2vmax, 8vmax, 9vmax);
     }
 
     .movieEpisodesContainer {
@@ -270,10 +324,28 @@ contrast {
         filter: brightness(60%);
     }
 
+
+    .detailBar {
+        width: 1%
+    }
+
 }
 
 /*Responsividade celulares*/
 @media screen and (min-width: 0) and (max-width: 599px) {
+
+    nav h1 {
+        width: 70%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
     .mainContainer {
         position: absolute;
         width: 100%;
@@ -284,13 +356,14 @@ contrast {
     }
 
     .movieInfoContainer {
-        width: 70%;
+        width: 90%;
+        padding-right: 1rem;
         font-size: clamp(1vmax, 1.5vmax, 1.5vmax);
         margin: 6rem auto;
     }
 
     .movieInfoContainer h1 {
-        font-size: clamp(2vmax, 4vmax, 4vmax);
+        font-size: clamp(2vmax, 5vmax, 5vmax);
     }
 
     #movieSinopse {
@@ -299,6 +372,7 @@ contrast {
 
     .movieEpisodesContainer {
         width: 90%;
+        height: fit-content;
         margin: .1rem auto;
         padding-bottom: .5rem;
         display: flex;
@@ -308,15 +382,17 @@ contrast {
         overflow-x: auto;
         overflow-y: hidden;
         right: 0%;
-        top: 100%;
+        top: 95%;
     }
 
     .movieEpisode {
         width: fit-content;
+        height: fit-content;
     }
 
     .movieEpisodesContent {
         width: fit-content;
+        margin-bottom: 0rem;
     }
 
     .movieEpisodesContent img {
@@ -327,8 +403,11 @@ contrast {
         filter: brightness(60%);
     }
 
-}
+    .detailBar {
+        width: 2%
+    }
 
+}
 
 
 
