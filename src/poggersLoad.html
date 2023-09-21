@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+        svg {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bolder;
+        }
+
+        svg text {
+            animation: stroke 3s infinite alternate;
+            stroke-width: 2;
+            stroke: #FF0000;
+            font-size: 100px;
+        }
+
+        @keyframes stroke {
+            0% {
+                fill: rgba(204, 29, 29, 0);
+                stroke: rgba(255, 0, 0, 1);
+                stroke-dashoffset: 25%;
+                stroke-dasharray: 0 50%;
+                stroke-width: 2;
+            }
+
+            70% {
+                fill: rgba(204, 29, 29, 0);
+                stroke: rgba(255, 0, 0, 1);
+            }
+
+            80% {
+                fill: rgba(204, 29, 29, 0);
+                stroke: rgba(255, 0, 0, 1);
+                stroke-width: 3;
+            }
+
+            100% {
+                fill: rgba(204, 29, 29, 1);
+                stroke: rgba(255, 0, 0, 0);
+                stroke-dashoffset: -25%;
+                stroke-dasharray: 50% 0;
+                stroke-width: 0;
+            }
+        }
+
+        #wrapper {
+            background-color: #0F0F0F;
+            height: 90%;
+            display: block;
+        }
+
+        body {
+            background-color: #0F0F0F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <svg>
+            <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                PoggersFlix
+            </text>
+        </svg>
+    </div>
+</body>
+
+<script>
+
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+
+    async function preload() {
+        await delay(3500)
+        console.log("sexo")
+        document.getElementById("wrapper").style.display = "none"
+        document.getElementsByTagName("main").style.display = "block"
+        document.getElementsByTagName("header").style.display = "block"
+        document.getElementsByTagName("footer").style.display = "flex"
+    }
+    preload()
+
+</script>
+
+</html>
