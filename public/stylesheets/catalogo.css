@@ -1,0 +1,402 @@
+:root {
+    --backgound: #0F0F0F, #191919;
+    --white: #F5F5F5;
+    --red: #D60303;
+    --black: #0f0f0f;
+    --dark-red: #970606;
+}
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    color: var(--white);
+    
+
+}
+
+
+body {
+    background: radial-gradient(60% 50%, var(--backgound));
+    background-repeat: cover;
+    cursor: url(), auto;
+    overflow: auto;
+    font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: inherit;
+    border-radius: .3rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-red);
+    border-radius: 1rem;
+}
+
+button {
+    border: 0;
+    border-radius: 0.3rem;
+    display: block;
+    background: var(--red);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: 20rem;
+}
+
+contrast {
+    color: var(--red);
+}
+
+
+/* Formatação navbar */
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2rem;
+    position: relative;
+    z-index: 100;
+    width: calc(100% - 4rem);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+nav h1 {
+    width: 27%;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+}
+
+
+.searchBar {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 60px;
+    height: 40px;
+    background: none;
+    border: 2px solid var(--red);
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: var(--text-color);
+    outline: none;
+    transition: .5s;
+}
+
+.searchBar:hover input {
+    width: 150px;
+    background: inherit;
+    border-radius: 10px;
+    display: inline;
+}
+
+.searchBar i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: var(--red);
+    transition: .2s;
+}
+
+.searchBar:hover i {
+    opacity: 0;
+    z-index: -1;
+}
+
+.right {
+    width: 23%;
+    display: flex;
+    justify-content: right;
+}
+
+.links {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 110%;
+    width: 50%;
+}
+
+
+.pages {
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    margin: 0 10%;
+    padding: 0.1rem;
+
+}
+
+#current {
+    color: var(--red);
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    margin: 0 10%;
+    padding: 0.1rem;
+}
+
+.pages::before {
+    content: "";
+    background-color: var(--red);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: transform .4s ease;
+    transform-origin: right;
+    transform: scaleX(0);
+    border-radius: 0.2rem;
+    padding: 10px;
+}
+
+.pages:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav input {
+    display: inline;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 2rem;
+    border-radius: 100%;
+    margin-left: 2rem;
+}
+
+.search {
+    font-size: x-large;
+}
+
+.search i {
+    margin: 0 1rem;
+}
+
+nav#menu {
+    display: none;
+    justify-content: space-between;
+    transition: opacity 1s ease-out;
+}
+
+#navContent {
+    z-index: -1;
+    position: fixed;
+    padding-top: 10rem;
+    right: 0;
+    top: 0%;
+    width: 55%;
+    height: 100vh;
+    background: radial-gradient(60% 50%, var(--backgound));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#navContent a {
+    margin: 1.7rem;
+    border-bottom: 1.5px solid var(--red);
+}
+
+#menu button {
+    background: none;
+    border: none;
+    font-size: x-large;
+}
+
+section {
+    display: inline-block;
+    position: relative;
+    overflow-x: hidden;
+}
+
+form#prefe {
+    margin-top: 4rem;
+}
+
+fieldset {
+    width: auto;
+    border: 0;
+    margin-left: 2rem;
+}
+
+label {
+    font-size: 1.3rem;
+}
+
+select {
+    border: 1px solid var(--red);
+    width: auto;
+    font-size: 1.3rem;
+    background: none;
+    border-radius: 2rem;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+option {
+    color: var(--black);
+}
+
+
+section#list {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 2rem 4rem;
+    overflow: hidden;
+}
+
+/* 
+.specify {
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.age,
+.duration,
+.rate,
+.year {
+    margin: 0 5%;
+}
+
+.movieTitle {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-size: 1.3rem;
+
+}
+
+.information {
+    width: 30%;
+    position: absolute;
+    left: calc(inherit - 15rem);
+    background-color: var(--dark-red);
+    background-repeat: cover;
+    object-fit: cover;
+    flex-wrap: wrap;
+    display: none;
+    border: 0, 1px var(--white) solid;
+    border-radius: 1rem;
+    margin-top: 2em;
+    padding: 1rem;
+    z-index: 99999;
+}
+
+.movies:hover .information {
+    transition-delay: 1s;
+    transition-property: display;
+    transition-duration: 2s;
+    display: inline;
+    flex-wrap: wrap;
+} */
+
+#plus {
+    position: relative;
+    top: -15rem;
+    right: 3rem;
+}
+
+.poster {
+    transition: 0.5s;
+    width: 10rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin: 1.5rem 1.2rem;
+}
+
+.poster:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+
+}
+
+.poster:hover i{
+    transition: .5s;
+    transform: scale(1.1);
+}
+
+
+
+/*Responsividade tablets*/
+@media screen and (min-width: 600px) and (max-width: 1351px) {
+    nav h1 {
+        width: 55%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
+    .poster {
+        margin: 1rem 0.5rem;
+    }
+
+}
+
+
+
+/*Responsividade celulares*/
+@media screen and (min-width: 0) and (max-width: 599px) {
+
+    nav h1 {
+        width: 70%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
+    .poster {
+        margin: 1rem 0.5rem;
+        width: 7rem;
+        height: 10rem;
+    }
+}
+
+@media screen and (min-width: 0) and (max-width: 340px) {
+    .userimg {
+        width: auto;
+    }
+}

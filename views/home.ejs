@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/loadScreen.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Início</title>
+    <script src="https://kit.fontawesome.com/d7de81155c.js" crossorigin="anonymous"></script>
+    <script src="./javascripts/functions.js"></script>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+
+<div id="wrapper">
+    <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            PoggersFlix
+        </text>
+    </svg>
+</div>
+
+
+
+<body>
+    <header>
+        <nav>
+            <h1><a href="/home">Poggers<contrast id="flix">Flix</contrast></a></h1>
+            <div class="links">
+                <a href="/" id="current">Início</a>
+                <a href="./catalog?type=movies" class="pages">Filmes</a>
+                <a href="./catalog?type=series" class="pages">Séries</a>
+            </div>
+            <div class="right">
+                <div class="searchBar">
+                    <form name="search" action="/catalog">
+                        <input type=" text" class="input" name="query" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user">
+                    <a href="/user/account">
+                        <img
+                            src="https://gclabels.net/image/cache/data/new/inv/new/Blank-White-Square-Labels-s1w-600x600.png">
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <nav id="menu">
+            <h1><a>Poggers<contrast id="flix">Flix</contrast></a></h1>
+            <button onclick="showNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div id="navContent" style="display: none;">
+                <a href="/catalog?type=movies">Filmes</a>
+                <a href="/catalog?type=series">Séries</a>
+
+                <div class="searchBar">
+                    <form name="search" action="/catalog">
+                        <input type="text" class="input" name="query" onmouseout="this.value = ''; this.blur();"">
+                    </form>
+                    <i class=" fas fa-search"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <div class="presents">
+            <% var i=Math.floor((Math.random() * data.length)) %>
+                <img src=<%=data[i].mBackground%> draggable=false>
+                <div class="movieTitle">
+                    <h1>
+                        <%=data[i].mName%>
+                    </h1>
+                    <p>
+                        <%=data[i].mSinopse%>
+                    </p>
+
+                </div>
+        </div>
+        <section>
+            <div class="sectionTitle">
+                <div class="lineDetail"></div>
+                <h2>Lançamentos</h2>
+            </div>
+            <div class="movieRow">
+                <% data.forEach((data)=> { %>
+                    <div class="movieCover">
+                        <a href="/movie?id=<%=data._id%>">
+                            <img src=<%=data.mFullSizeCover%> draggable=false>
+                        </a>
+                    </div>
+                    <%})%>
+            </div>
+        </section>
+        <section>
+            <div class="sectionTitle">
+                <div class="lineDetail"></div>
+                <h2>Mais assistidos</h2>
+            </div>
+            <div class="movieRow">
+                <% data.forEach((data)=> { %>
+                    <div class="movieCover">
+                        <a href="/movie?id=<%=data._id%>">
+                            <img src=<%=data.mFullSizeCover%>
+                        </a>
+                    </div>
+                    <%})%>
+            </div>
+        </section>
+        <section>
+            <div class="sectionTitle">
+                <div class="lineDetail"></div>
+                <h2>Recomendações para você</h2>
+            </div>
+            <div class="movieRow">
+                <% data.forEach((data)=> { %>
+                    <div class="movieCover">
+                        <a href="/movie?id=<%=data._id%>">
+                            <img src=<%=data.mFullSizeCover%>
+                        </a>
+                    </div>
+                    <%})%>
+            </div>
+        </section>
+        <section>
+            <div class="sectionTitle">
+                <div class="lineDetail"></div>
+                <h2>Continuar assistindo</h2>
+            </div>
+            <div id="keepWatching">
+                <div id="kwCover">
+                    <img
+                        src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dramatic-movie-poster-template-design-f0f2c261e077379d0f82604f96b6a774_screen.jpg?ts=1602570456">
+                </div>
+                <div id="kwContent">
+                    <h1 id="kwTitle">The Lockdown</h1>
+                    <p id="kwSinopse">Seis desconhecidos são confinados em um hospital nigeriano durante uma pandemia. A
+                        tensão aumenta dentro e fora do hospital, e as histórias dessas pessoas se entrelaçam. Assista o
+                        quanto quiser. Omotola Jalade-Ekeinde estrela este suspense tenso sobre uma pandemia, do diretor
+                        Moses Inwang (Alter Ego).</p>
+                    <a id="kwWatchNow" href="#">Assistir • S1E03</a>
+                </div>
+            </div>
+        </section>
+        <hr>
+    </main>
+</body>
+
+</html>

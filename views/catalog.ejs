@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="por-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d7de81155c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/catalogo.css">
+    <title>Filmes</title>
+    <script src="./javascripts/functions.js"></script>
+    <link rel="stylesheet" href="./stylesheets/loadScreen.css">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+
+<div id="wrapper">
+    <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            PoggersFlix
+        </text>
+    </svg>
+</div>
+
+<body>
+
+    <header>
+
+        <nav>
+            <h1><a href="/home">Poggers<contrast id="flix">Flix</contrast></a></h1>
+            <div class="links">
+                <a href="/home" class="pages">Início</a>
+                <% if(type=="movies" ){%>
+                    <a href="/catalog?type=movies" id="current">Filmes</a>
+                    <a href="/catalog?type=series" class="pages">Séries</a>
+                    <%} else { %>
+                        <a href="/catalog?type=movies" class="pages">Filmes</a>
+                        <a href="/catalog?type=series" id="current">Séries</a>
+                        <% } %>
+
+
+            </div>
+            <div class="right">
+                <div class="searchBar">
+                    <form name="search">
+                        <input type=" text" class="input" name="query" onmouseout="this.value = ''; this.blur();">
+                    </form>
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="user">
+                    <a href="/user/account">
+                        <img src="https://gclabels.net/image/cache/data/new/inv/new/Blank-White-Square-Labels-s1w-600x600.png"
+                            draggable=false>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <nav id="menu">
+            <h1><a href="/home">Poggers<contrast id="flix">Flix</contrast></a></h1>
+            <button onclick="showNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div id="navContent" style="display: none;">
+                <a href="/catalog?type=movies">Filmes</a>
+                <a href="/catalog?type=series">Séries</a>
+
+                <div class="searchBar">
+                    <form name="search" action="/catalog">
+                        <input type="text" class="input" name="query" onmouseout="this.value = ''; this.blur();"">
+                    </form>
+                    <i class=" fas fa-search"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <form action="" id="prefe">
+        <fieldset id="preferences">
+            <label for="order">Ordenar por</label>
+            <select name="order" id="order">
+                <option value="a-z" id="a-z">A-Z</option>
+                <option value="z-a" id="z-a">Z-A</option>
+                <option value="recent" id="recent">Mais recente</option>
+                <option value="older" id="older">Mais antigo</option>
+            </select>
+        </fieldset>
+    </form>
+
+    <div id="#span"></div>
+
+
+
+    <section id="list">
+
+        <% data.forEach((data)=> { %>
+            <div class="movies">
+                <a href="/movie?id=<%=data._id%>">
+
+                    <div class="holder">
+                        <img src="<%=data.mCover%>" alt="<%=data.mName%>" class="poster">
+                        <i class="fa-solid fa-plus" id="plus"></i>
+                    </div>
+                </a>
+            </div>
+
+            <%})%>
+    </section>
+</body>
+
+</html>

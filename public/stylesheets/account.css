@@ -1,0 +1,377 @@
+:root {
+    --backgound: #0F0F0F, #191919;
+    --white: #F5F5F5;
+    --red: #D60303;
+    --black: #0f0f0f;
+}
+
+* {
+    scroll-behavior: smooth;
+    margin: 0;
+    color: var(--white);
+    font-family: 'Montserrat', Tahoma, Verdana, sans-serif;
+}
+
+
+body {
+    background: radial-gradient(60% 50%, var(--backgound));
+
+}
+
+button {
+    border: 0;
+    border-radius: 0.3rem;
+    display: block;
+    background: var(--red);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: 0.5rem;
+    width: 20rem;
+}
+
+contrast {
+    color: var(--red);
+}
+
+div#holderPic {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+}
+
+img#user {
+    width: 13rem;
+    border-radius: 100%;
+    align-self: center;
+}
+
+#name {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#typeUser {
+    align-self: center;
+    margin-top: 0.2rem;
+}
+
+
+#one {
+    border-width: 0;
+    align-self: center;
+    padding: 1rem;
+    margin-top: -5rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    margin-top: 2rem;
+    background: inherit;
+    border: 0;
+}
+
+input {
+    border: 1px solid var(--red);
+    border-radius: 0.5rem;
+    height: fit-content;
+    width: 20rem;
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+    background: inherit;
+    text-align: center;
+}
+
+#userlabel {
+    margin-top: -1rem;
+}
+
+#key input {
+    display: block;
+    margin: 1rem auto;
+}
+
+#key {
+    padding: 0;
+    border: 0;
+}
+
+#tema {
+    margin-left: 0.2rem;
+}
+
+select {
+    background: inherit;
+    font-size: 1.3rem;
+    border-width: 0;
+    padding: 0;
+    width: 20rem;
+    text-align: center;
+}
+
+option {
+    color: var(--black);
+}
+
+
+#premium {
+    background: inherit;
+    align-self: center;
+    margin: 5rem auto;
+}
+
+
+
+nav#menu {
+    display: none;
+    justify-content: space-between;
+    transition: opacity 1s ease-out;
+}
+
+#navContent {
+    z-index: -1;
+    position: fixed;
+    padding-top: 10rem;
+    right: 0;
+    top: 0%;
+    width: 55%;
+    height: 100vh;
+    background: radial-gradient(60% 50%, var(--background));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#navContent a {
+    margin: 1.7rem;
+    border-bottom: 1.5px solid var(--red);
+}
+
+#menu button {
+    background: none;
+    border: none;
+    font-size: x-large;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 2rem;
+    z-index: 100;
+    width: calc(100% - 4rem);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+nav h1 {
+    width: 27%;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+}
+
+.searchBar {
+    position: relative;
+}
+
+.input {
+    padding: 10px;
+    width: 60px;
+    height: 40px;
+    background: none;
+    border: 2px solid var(--red);
+    border-radius: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: var(--text-color);
+    outline: none;
+    transition: .5s;
+}
+
+.searchBar:hover input {
+    width: 150px;
+    background: inherit;
+    border-radius: 10px;
+    display: inline;
+}
+
+.searchBar i {
+    position: absolute;
+    top: 55%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: var(--red);
+    transition: .2s;
+}
+
+.searchBar:hover i {
+    opacity: 0;
+    z-index: -1;
+}
+
+.right {
+    width: 23%;
+    display: flex;
+    justify-content: right;
+}
+
+.links {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 110%;
+    width: 50%;
+}
+
+#current {
+    color: var(--red);
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    margin: 0 10%;
+    padding: 0.1rem;
+}
+
+.pages {
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    margin: 0 10%;
+    padding: 0.1rem;
+
+}
+
+.pages::before {
+    content: "";
+    background-color: var(--red);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: transform .4s ease;
+    transform-origin: right;
+    transform: scaleX(0);
+    border-radius: 0.2rem;
+    padding: 10px;
+}
+
+.pages:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+nav input {
+    display: inline;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user img {
+    width: 2rem;
+    border-radius: 100%;
+    margin-left: 2rem;
+}
+
+.search {
+    font-size: x-large;
+}
+
+.search i {
+    margin: 0 1rem;
+}
+
+
+nav#menu {
+    display: none;
+    justify-content: space-between;
+    transition: opacity 1s ease-out;
+}
+
+#navContent {
+    z-index: -1;
+    position: fixed;
+    padding-top: 10rem;
+    right: 0;
+    top: 0%;
+    width: 55%;
+    height: 100vh;
+    background: radial-gradient(60% 50%, var(--background));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#navContent a {
+    margin: 1.7rem;
+    border-bottom: 1.5px solid var(--red);
+}
+
+#menu button {
+    background: none;
+    border: none;
+    font-size: x-large;
+    margin-top: 0;
+}
+
+
+
+@media screen and (min-width: 600px) and (max-width: 995px) {
+    nav h1 {
+        width: 55%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
+}
+
+/*Responsividade celulares*/
+@media screen and (min-width: 0) and (max-width: 599px) {
+    nav h1 {
+        width: 70%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav#menu {
+        display: flex;
+    }
+
+    #navContent {
+        width: 75%;
+    }
+}

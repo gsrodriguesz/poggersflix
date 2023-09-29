@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../stylesheets/authPages.css">
+    <script src="../javascripts/functions.js"></script>
+    <link rel="stylesheet" href="../stylesheets/loadScreen.css">
+    <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+</head>
+
+<div id="wrapper">
+    <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+            PoggersFlix
+        </text>
+    </svg>
+</div>
+
+<body>
+    <header>
+        <nav>
+            <h1><a href="/">Poggers<flix>Flix</flix></a></h1>
+            <div class="links">
+                <a href="/">Início</a>
+                <a href="/auth/login" class="sing-in">Entrar</a>
+            </div>
+        </nav>
+    </header>
+    <section>
+        <p class="registro">REGISTRO</p>
+    </section>
+    <form method="post" action="/auth/register">
+        <fieldset>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Digite o seu email" required>
+
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" placeholder="Digite a sua senha" required>
+
+            <label for="corfirm">Corfirme sua senha</label>
+            <input type="password" name="confirm" id="confirm" placeholder="Confirme a sua senha" required>
+
+            <p class="conta" style="margin: 1rem 0;">
+                Já tem uma conta?<a href="register.ejs" class="create">
+                    <flix>Entre aqui</flix>
+                </a>
+            </p>
+
+            <button type="submit" id="submit">
+                Registro
+            </button>
+
+        </fieldset>
+
+
+    </form>
+    <div class="errorContainer">
+        <p id="error">
+            <%=msg%>
+        </p>
+    </div>
+</body>
+
+</html>
