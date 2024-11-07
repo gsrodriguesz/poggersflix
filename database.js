@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost:27017/poggersFlix');
 
-mongoose.connect("mongodb+srv://admin:pFFyGKpgdiea8IQO@cluster.s4yfeqj.mongodb.net/poggersData?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://admin:**************@cluster.s4yfeqj.mongodb.net/poggersData?retryWrites=true&w=majority")
 
 const movieSchema = new mongoose.Schema({
     _id: { type: Number },
